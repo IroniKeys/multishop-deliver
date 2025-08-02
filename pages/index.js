@@ -1,4 +1,11 @@
 export default function Home() {
+  const partenaires = [
+    { nom: "Carrefour", logo: "/carrefour-logo.png" },
+    { nom: "Colruyt", logo: "/colruyt-logo.png" },
+    { nom: "Delhaize", logo: "/delhaize-logo.png" },
+    { nom: "Aldi", logo: "/aldi-logo.png" },
+  ];
+
   return (
     <main className="min-h-screen bg-white text-gray-900">
       {/* Héro */}
@@ -31,40 +38,41 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Partenaires */}
-      <section className="bg-gray-100 py-16 px-6 text-center">
-        <h2 className="text-2xl font-semibold mb-6">Nos enseignes partenaires</h2>
-        <div className="flex flex-wrap justify-center gap-8">
-          <img src="/carrefour-logo.png" alt="Carrefour" className="h-10" />
-          <img src="/colruyt-logo.png" alt="Colruyt" className="h-10" />
-          <img src="/delhaize-logo.png" alt="Delhaize" className="h-10" />
-          <img src="/aldi-logo.png" alt="Aldi" className="h-10" />
+      {/* Nos enseignes partenaires */}
+      <section className="py-20 px-6 bg-gray-100 text-center">
+        <h2 className="text-2xl font-semibold mb-10">Nos enseignes partenaires</h2>
+        <div className="flex flex-wrap justify-center gap-10">
+          {partenaires.map((p) => (
+            <img
+              key={p.nom}
+              src={p.logo}
+              alt={p.nom}
+              className="h-12 grayscale hover:grayscale-0 transition"
+            />
+          ))}
         </div>
       </section>
 
       {/* Témoignages */}
-      <section className="py-20 px-6 bg-white">
-        <h2 className="text-2xl font-semibold text-center mb-12">Ce que nos clients disent</h2>
-        <div className="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
-          <div className="bg-gray-50 p-6 rounded-xl shadow">
-            <p className="mb-2">"J'ai gagné plus de 30€ sur mes courses du mois dernier sans rien faire de plus !"</p>
-            <p className="text-sm text-gray-600">- Sophie, Liège</p>
-          </div>
-          <div className="bg-gray-50 p-6 rounded-xl shadow">
-            <p className="mb-2">"Livraison nickel, très pratique pour comparer et regrouper mes courses."</p>
-            <p className="text-sm text-gray-600">- Maxime, Namur</p>
-          </div>
-        </div>
+      <section className="py-20 px-6 text-center">
+        <h2 className="text-2xl font-semibold mb-12">Ce que nos clients disent</h2>
+        <blockquote className="italic max-w-xl mx-auto mb-6">
+          "J'ai gagné plus de 30€ sur mes courses du mois dernier sans rien faire de plus !"
+          <br />- Sophie, Liège
+        </blockquote>
+        <blockquote className="italic max-w-xl mx-auto">
+          "Livraison nickel, très pratique pour comparer et regrouper mes courses."
+          <br />- Maxime, Namur
+        </blockquote>
       </section>
 
-      {/* Appel à l'action final */}
-      <section className="bg-blue-600 text-white py-16 px-6 text-center">
-        <h2 className="text-2xl font-semibold mb-4">Prêt(e) à simplifier vos courses ?</h2>
-        <button className="bg-white text-blue-600 px-6 py-3 rounded-full hover:bg-gray-100 transition">
+      {/* Call-to-action */}
+      <section className="py-20 px-6 bg-blue-50 text-center">
+        <h2 className="text-2xl font-bold mb-6">Prêt(e) à simplifier vos courses ?</h2>
+        <button className="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition">
           Je crée mon compte gratuitement
         </button>
       </section>
     </main>
   );
 }
-
