@@ -4,6 +4,8 @@ export default function Home() {
     { nom: "Colruyt", logo: "/colruyt-logo.png" },
     { nom: "Delhaize", logo: "/delhaize-logo.png" },
     { nom: "Aldi", logo: "/aldi-logo.png" },
+    { nom: "Lidl", logo: "/lidl-logo.png" },
+    { nom: "Intermarché", logo: "/intermarché-logo.png" },
   ];
 
   return (
@@ -41,13 +43,13 @@ export default function Home() {
       {/* Nos enseignes partenaires */}
       <section className="py-20 px-6 bg-gray-100 text-center">
         <h2 className="text-2xl font-semibold mb-10">Nos enseignes partenaires</h2>
-        <div className="flex flex-wrap justify-center gap-10">
-          {partenaires.map((p) => (
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 justify-items-center">
+          {partenaires.map((p, index) => (
             <img
-              key={p.nom}
+              key={index}
               src={p.logo}
               alt={p.nom}
-              className="h-12 grayscale hover:grayscale-0 transition"
+              className="h-16 w-auto object-contain grayscale hover:grayscale-0 transition duration-300"
             />
           ))}
         </div>
