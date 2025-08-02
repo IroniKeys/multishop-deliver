@@ -43,16 +43,13 @@ export default function Home() {
       {/* Nos enseignes partenaires */}
       <section className="py-20 px-6 bg-gray-100 text-center">
         <h2 className="text-2xl font-semibold mb-10">Nos enseignes partenaires</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 justify-items-center">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 max-w-6xl mx-auto">
           {partenaires.map((p, index) => (
-            <div
-              key={index}
-              className="flex items-center justify-center w-28 h-20 bg-white rounded-lg shadow p-2"
-            >
+            <div key={index} className="flex justify-center items-center p-2">
               <img
                 src={p.logo}
                 alt={p.nom}
-                className="max-h-12 w-auto object-contain grayscale hover:grayscale-0 transition duration-300"
+                className="h-20 w-auto object-contain grayscale hover:grayscale-0 transition duration-300"
               />
             </div>
           ))}
